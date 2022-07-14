@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "929658099336",
+    "project_id": "transporte-alimentos-g1-astm",
+    "storage_bucket": "transporte-alimentos-g1-astm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929658099336:android:00fed55e7c3ebed25cb13d",
+        "android_client_info": {
+          "package_name": "com.example.transporte_alimentos_amst_g1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929658099336-km3d16nijcr25qoqqcl422acmunl2j0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.transporte_alimentos_amst_g1",
+            "certificate_hash": "c8d7c9fae6ab3a5f024731dd1d7f2a786e48a4fe"
+          }
+        },
+        {
+          "client_id": "929658099336-malolmruce9oq4uq8r7juitrs8hm1v54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9ugy8ytObonB7Yw4KlkYHTDRxdPnaDEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929658099336-malolmruce9oq4uq8r7juitrs8hm1v54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

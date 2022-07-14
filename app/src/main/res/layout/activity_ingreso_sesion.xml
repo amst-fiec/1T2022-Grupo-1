@@ -49,6 +49,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/boton_redondo"
         android:drawableLeft="@drawable/logo_google"
+        android:onClick="iniciarSesion"
         android:text="Inicio de Sesión"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
