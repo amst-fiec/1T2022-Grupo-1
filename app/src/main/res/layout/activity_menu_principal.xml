@@ -8,12 +8,67 @@
     android:orientation="vertical"
     tools:context=".MenuPrincipal">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_CerrarSesion"
+    <TextView
+        android:id="@+id/titulo_bienvenida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="34sp" />
+
+    <ImageView
+        android:id="@+id/imagen_persona"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_parada"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/boton_redondo"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="150dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Administrar Paradas" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_ubicacion"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_redondo"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Observar Ubicacion" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_historialEntregas"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_redondo"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Historial de entregas" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_CerrarSesion"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="10dp"
         android:background="@drawable/boton_redondo"
         android:onClick="cerrarSesion"
         android:text="Cerrar Sesion"
