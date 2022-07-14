@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A39AA5"
-    android:backgroundTint="#58A3DF"
+    android:backgroundTint="#39445A"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -26,10 +26,10 @@
         android:layout_width="311dp"
         android:layout_height="148dp"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center_horizontal|center_vertical"
         android:text="Speedy Truck"
-        android:textColor="#B6E3B8"
+        android:textColor="#FFFFFF"
         android:textSize="60sp" />
 
 </LinearLayout>
