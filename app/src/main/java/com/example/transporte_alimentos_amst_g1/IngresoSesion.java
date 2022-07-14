@@ -105,8 +105,6 @@ public class IngresoSesion extends AppCompatActivity {
             intent.putExtra("info_user", info_user);
             startActivity(intent);
 
-            //Cerramos el actual
-            finish();
         }else {
             System.out.println("sin registrarse");
         }

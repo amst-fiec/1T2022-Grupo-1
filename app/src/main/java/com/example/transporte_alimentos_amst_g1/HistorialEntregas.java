@@ -16,8 +16,6 @@ public class HistorialEntregas extends AppCompatActivity {
 
     public void regresar(View view){
         //Se inicializa el siguiente
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 }
