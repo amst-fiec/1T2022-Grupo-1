@@ -100,13 +100,13 @@ public class IngresoSesion extends AppCompatActivity {
 
             System.out.println("Llego");
 
-            //Cerramos el actual
-            finish();
-
             //Se inicializa el siguiente
             Intent intent = new Intent(this, MenuPrincipal.class);
             intent.putExtra("info_user", info_user);
             startActivity(intent);
+
+            //Cerramos el actual
+            finish();
         }else {
             System.out.println("sin registrarse");
         }

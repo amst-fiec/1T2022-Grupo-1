@@ -24,6 +24,7 @@
         android:layout_marginBottom="152dp"
         android:clickable="true"
         android:contentDescription="@string/app_name"
+        android:onClick="regresar"
         app:fabCustomSize="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
