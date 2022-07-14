@@ -28,6 +28,12 @@
             android:text="Historial de Entregas"
             android:textColor="#FFFFFF"
             android:textSize="50sp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/prueba" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
