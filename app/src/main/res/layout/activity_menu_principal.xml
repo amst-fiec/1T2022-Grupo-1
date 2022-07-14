@@ -31,37 +31,40 @@
         android:id="@+id/btn_parada"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="15dp"
         android:background="@drawable/boton_redondo"
-        android:layout_gravity="center_horizontal|center_vertical"
+        android:onClick="administrar_paradas"
+        android:text="Administrar Paradas"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:textSize="18sp"
-        android:text="Administrar Paradas" />
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_ubicacion"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/boton_redondo"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="observar_ubicacion"
+        android:text="Observar Ubicacion"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:textSize="18sp"
-        android:text="Observar Ubicacion" />
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_historialEntregas"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/boton_redondo"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="historial_Entragas"
+        android:text="Historial de entregas"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:textSize="18sp"
-        android:text="Historial de entregas" />
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_CerrarSesion"
