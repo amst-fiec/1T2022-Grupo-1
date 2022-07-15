@@ -45,6 +45,7 @@
         android:clickable="true"
         android:contentDescription="@string/app_name"
         android:onClick="regresar"
+        app:backgroundTint="#705587"
         app:fabCustomSize="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
