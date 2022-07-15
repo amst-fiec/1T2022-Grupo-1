@@ -23,16 +23,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/aclonica"
+            android:fontFamily="@font/alice"
             android:gravity="center_horizontal|center_vertical"
             android:text="Historial de Entregas"
             android:textColor="#FFFFFF"
-            android:textSize="50sp" />
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="393dp"
             app:srcCompat="@drawable/prueba" />
     </LinearLayout>
 

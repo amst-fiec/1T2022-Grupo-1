@@ -23,11 +23,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/aclonica"
+            android:fontFamily="@font/alice"
             android:gravity="center_horizontal|center_vertical"
             android:text="Observar Ubicación"
             android:textColor="#FFFFFF"
-            android:textSize="50sp" />
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView4"
