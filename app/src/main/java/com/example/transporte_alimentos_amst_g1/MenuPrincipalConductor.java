@@ -35,15 +35,13 @@ public class MenuPrincipalConductor extends AppCompatActivity {
     }
 
 
-    public void agregar_parada(View view){
-        //Se inicializa el siguiente
-        Intent intent = new Intent(this, ObservarUbicacion.class);
-        startActivity(intent);
+    public void actualizar_coordenadas(View view){
+
     }
 
     public void registrarAdministrador(View view){
         //Se inicializa el siguiente
-        Intent intent = new Intent(this, MostrarParadas.class);
+        Intent intent = new Intent(this, RegistroAdministrador.class);
         startActivity(intent);
     }
 

@@ -78,7 +78,7 @@ public class Registro extends AppCompatActivity {
                 userIngresado.setClase(infoSel);
 
                 if (!snapshot.hasChild(userIngresado.getUsuario())) {
-                    databaseReference.child("UsersRegis").child("Usuarios").child(userIngresado.getUsuario()).setValue(userIngresado);
+                    databaseReference.child("UsersRegis").child("Usuarios").child(userIngresado.getUsuario()).child("info").setValue(userIngresado);
                     //databaseReference.child("UsersRegis").child(per.getUsuario()).setValue(0);
                     Toast.makeText(Registro.this, "Agregado", Toast.LENGTH_SHORT).show();
                     vaciarCeldas();

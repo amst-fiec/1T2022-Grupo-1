@@ -15,14 +15,19 @@
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable/ic_launcher_background.xml" value="0.267" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable/logo_google.xml" value="0.267" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_administrar_paradas.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_agregar_paradas.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_enviar_ubicacion.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_historial_entregas.xml" value="0.358695652173913" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_ingreso_sesion.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_menu_principal.xml" value="0.358695652173913" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_menu_principal_admin.xml" value="0.25" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_menu_principal_conductor.xml" value="0.33" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_mostrar_paradas.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_observar_ubicacion.xml" value="0.25" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_opcion_visualizacion.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_registro.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_registro_administrador.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/custom_spinner.xml" value="0.36041666666666666" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.36041666666666666" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/Transporte_Alimentos_AMST_G1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />

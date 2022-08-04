@@ -151,7 +151,7 @@ public class IngresoSesion extends AppCompatActivity {
                public void onDataChange(@NonNull DataSnapshot snapshot) {
                    if (snapshot.hasChild(datoUser) ) {
                        System.out.println("Correcto");
-                       usuario user =  snapshot.child(datoUser).getValue(usuario.class);
+                       usuario user =  snapshot.child(datoUser).child("info").getValue(usuario.class);
                        String userContra = user.getClave();
                        String userClass = user.getClase();
                        if (userContra.equals(datoPass)) {
