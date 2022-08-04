@@ -10,43 +10,89 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="283dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="282dp"
+        android:layout_height="190dp"
+        android:layout_gravity="center_horizontal|center_vertical"
         app:srcCompat="@drawable/logo" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="108dp"
-        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="322dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/alice"
+        android:text="Inicio de Sesion con Google"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="365dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="@font/alice"
-            android:text="Inicio de Sesion con Google"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="38sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+    <EditText
+        android:id="@+id/logUser"
         android:layout_width="300dp"
-        android:layout_height="66dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="10dp"
-        android:background="@drawable/boton_redondo"
-        android:drawableLeft="@drawable/logo_google"
+        android:background="@drawable/edit_round"
+        android:drawableLeft="@drawable/edit_user"
+        android:drawablePadding="10dp"
         android:fontFamily="@font/alice"
-        android:onClick="iniciarSesion"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:paddingLeft="5dp"
+        android:paddingEnd="10dp" />
+
+    <EditText
+        android:id="@+id/logPass"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_round"
+        android:drawableLeft="@drawable/ic_lock_dark"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/alice"
+        android:hint="Contraseña"
+        android:inputType="textPersonName|textPassword"
+        android:paddingLeft="5dp"
+        android:textColor="#000000" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/iniciarSesion"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/boton_redondo"
+        android:fontFamily="@font/alice"
         android:text="Inicio de Sesión"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Registrarse"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/boton_redondo"
+        android:fontFamily="@font/alice"
+        android:onClick="registro"
+        android:text="Registrarse"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/InicioSesionGoogle"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/boton_redondo"
+        android:drawableStart="@drawable/logo_google"
+        android:onClick="iniciarSesionGoogle" />
+
+
 </LinearLayout>

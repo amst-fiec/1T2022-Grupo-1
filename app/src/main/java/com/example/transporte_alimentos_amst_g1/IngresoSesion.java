@@ -110,8 +110,8 @@ public class IngresoSesion extends AppCompatActivity {
         }
     }
 
-    //metodo de inicio de sesion
-    public void iniciarSesion(View view) {
+    //metodo de inicio de sesion con google
+    public void iniciarSesionGoogle(View view) {
         resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
     }
 
@@ -120,4 +120,16 @@ public class IngresoSesion extends AppCompatActivity {
         mGoogleSignInClient.signOut().addOnCompleteListener(this,
                 task -> ingresoUsuario(null));
     }
+
+    //metodo de inicio de sesion normalmente
+    public void iniciarSesion(View view) {
+        resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
+    }
+
+    //metodo de inicio de sesion con google
+    public void registro(View view) {
+        Intent intent = new Intent(this, Registro.class);
+        startActivity(intent);
+    }
+
 }
