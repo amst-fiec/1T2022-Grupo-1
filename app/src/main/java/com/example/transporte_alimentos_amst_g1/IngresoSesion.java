@@ -4,37 +4,55 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.Clases.usuario;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
 public class IngresoSesion extends AppCompatActivity {
 
     FirebaseAuth mAuth;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     GoogleSignInClient mGoogleSignInClient;
+    EditText usuario,contra;
+    String datoUser, datoPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingreso_sesion);
+
+        usuario=findViewById(R.id.logUser);
+        contra = findViewById(R.id.logPass);
+
 
         //Inicializacion de las variables para el ingreso por Google
         mAuth = FirebaseAuth.getInstance();
@@ -44,6 +62,9 @@ public class IngresoSesion extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+
+        //Se inicializa la base de datos
+        inicializarFirebase();
 
         //En caso de que se cierre sesion en la aplicacion
         Intent intent = getIntent();
@@ -123,13 +144,75 @@ public class IngresoSesion extends AppCompatActivity {
 
     //metodo de inicio de sesion normalmente
     public void iniciarSesion(View view) {
-        resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
+        boolean resultadoValid = validarIngresos();
+        if (resultadoValid) {
+           databaseReference.child("UsersRegis").child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+               @Override
+               public void onDataChange(@NonNull DataSnapshot snapshot) {
+                   if (snapshot.hasChild(datoUser) ) {
+                       System.out.println("Correcto");
+                       usuario user =  snapshot.child(datoUser).getValue(usuario.class);
+                       String userContra = user.getClave();
+                       String userClass = user.getClase();
+                       if (userContra.equals(datoPass)) {
+                           usuario.setText("");
+                           contra.setText("");
+                           ClaseUsando.usuarioUsando = user;
+                           if (userClass.equals("Administrador")){
+                               Intent i = new Intent(IngresoSesion.this, MenuPrincipalAdmin.class);
+                               startActivity(i);
+                           }else if(userClass.equals("Conductor")){
+                               Intent i = new Intent(IngresoSesion.this, MenuPrincipalConductor.class);
+                               startActivity(i);
+                           }
+
+                       }else{
+                           Toast.makeText(IngresoSesion.this, "Contraseña incorrecta",
+                                   Toast.LENGTH_SHORT).show();
+                       }
+
+                   }else{
+                       Toast.makeText(IngresoSesion.this, "No existe dicho Usuario",
+                               Toast.LENGTH_SHORT).show();
+                   }
+               }
+
+               @Override
+               public void onCancelled(@NonNull DatabaseError error) {
+
+               }
+           });
+        }
+
     }
 
     //metodo de inicio de sesion con google
     public void registro(View view) {
         Intent intent = new Intent(this, Registro.class);
         startActivity(intent);
+    }
+
+    private void inicializarFirebase(){
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        databaseReference=firebaseDatabase.getReference();
+    }
+
+    private boolean validarIngresos(){
+        datoUser= usuario.getText().toString().trim().toLowerCase();
+        datoPass= contra.getText().toString().trim();
+        if(!datoUser.equals("") && !datoPass.equals("")) {
+            return true;
+        }else{
+            Toast.makeText(IngresoSesion.this, "IngreseCorrectamente los datos", Toast.LENGTH_SHORT).show();
+            if (datoUser.equals("")) {
+                usuario.setError("Se requiere el Usuario");
+            }
+            if (datoPass.equals("")) {
+                contra.setError("Se requiere la Contraseña");
+            }
+            return false;
+        }
     }
 
 }

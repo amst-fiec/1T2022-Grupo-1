@@ -66,6 +66,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/boton_redondo"
         android:fontFamily="@font/alice"
+        android:onClick="iniciarSesion"
         android:text="Inicio de Sesión"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -91,6 +92,7 @@
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="15dp"
         android:background="@drawable/boton_redondo"
+        android:contentDescription="@string/app_name"
         android:drawableStart="@drawable/logo_google"
         android:onClick="iniciarSesionGoogle" />
 
