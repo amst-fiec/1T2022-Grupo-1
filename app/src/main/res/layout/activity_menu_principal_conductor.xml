@@ -30,8 +30,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -64,8 +64,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -102,7 +102,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/boton_redondo"
         android:fontFamily="@font/alice"
         android:onClick="actualizar_coordenadas"
@@ -116,7 +116,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/boton_redondo"
         android:fontFamily="@font/alice"
         android:onClick="registrarAdministrador"
@@ -130,7 +130,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/boton_redondo"
         android:fontFamily="@font/alice"
         android:onClick="cerrarSesion"
