@@ -82,8 +82,8 @@ public class Registro extends AppCompatActivity {
                     //databaseReference.child("UsersRegis").child(per.getUsuario()).setValue(0);
                     Toast.makeText(Registro.this, "Agregado", Toast.LENGTH_SHORT).show();
                     if (infoSel.equals("Conductor")){
-                        databaseReference.child("UsersRegis").child("Usuarios").child(userIngresado.getUsuario()).child("localizacion").child("Longitud").setValue(0.0);
-                        databaseReference.child("UsersRegis").child("Usuarios").child(userIngresado.getUsuario()).child("localizacion").child("Latitud").setValue(0.0);
+                        databaseReference.child("UsersRegis").child("Usuarios").child(userIngresado.getUsuario()).child("localizacion").child("Longitud").setValue(-1.1);
+                        databaseReference.child("UsersRegis").child("Usuarios").child(userIngresado.getUsuario()).child("localizacion").child("Latitud").setValue(-1.1);
                     }
                     vaciarCeldas();
                 } else {

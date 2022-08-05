@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MenuPrincipalConductor extends AppCompatActivity {
 
     TextView txt_titulo;
-    String nombre_persona, status_persona;
+    String nombre_persona, status_persona,Usuario_persona;
     EditText log, lat;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -42,17 +42,21 @@ public class MenuPrincipalConductor extends AppCompatActivity {
         usuario user = ClaseUsando.usuarioUsando;
         nombre_persona = user.getNombre();
         status_persona= user.getClase();
+        Usuario_persona = user.getUsuario();
         //datoLong= log.getText().toString().trim();
         //datoLat= lat.getText().toString().trim();
         txt_titulo.setText("Bienvenido "+nombre_persona+"\n"
                 +"Clase: "+status_persona);
 
         inicializarFirebase();
-        databaseReference.child("UsersRegis").child("Usuarios").child(nombre_persona).child("localizacion").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("UsersRegis").child("Usuarios").child(Usuario_persona).child("localizacion").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                double lat = (double) snapshot.child("Latitud").getValue();
-                double lon = (double) snapshot.child("Longitud").getValue();
+                System.out.println(snapshot);
+                double latit = (double) snapshot.child("Latitud").getValue();
+                double longi = (double) snapshot.child("Longitud").getValue();
+                log.setText(Double.toString(longi));
+                lat.setText(Double.toString(latit));
             }
 
             @Override
@@ -71,7 +75,21 @@ public class MenuPrincipalConductor extends AppCompatActivity {
 
 
     public void actualizar_coordenadas(View view){
+        databaseReference.child("UsersRegis").child("Usuarios").child(Usuario_persona).child("localizacion").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                System.out.println(snapshot);
+                double latit = (double) snapshot.child("Latitud").getValue();
+                double longi = (double) snapshot.child("Longitud").getValue();
+                log.setText(Double.toString(longi));
+                lat.setText(Double.toString(latit));
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     public void registrarAdministrador(View view){

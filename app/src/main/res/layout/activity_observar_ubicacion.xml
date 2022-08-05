@@ -54,6 +54,6 @@
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:maxImageSize="50dp"
-        app:srcCompat="@drawable/ic_action_name" />
+        app:srcCompat="@drawable/ic_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
