@@ -41,7 +41,7 @@ public class MenuPrincipalAdmin extends AppCompatActivity {
 
     public void observar_ubicacion(View view){
         //Se inicializa el siguiente
-        Intent intent = new Intent(this, ObservarUbicacion.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
