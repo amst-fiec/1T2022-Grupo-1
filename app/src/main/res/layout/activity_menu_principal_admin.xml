@@ -26,7 +26,7 @@
         android:layout_width="282dp"
         android:layout_height="190dp"
         android:layout_gravity="center_horizontal|center_vertical"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logoapp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bot_AdminParadas"
