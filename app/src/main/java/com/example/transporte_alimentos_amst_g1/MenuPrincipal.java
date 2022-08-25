@@ -41,23 +41,12 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
 
-    public void observar_ubicacion(View view){
-        //Se inicializa el siguiente
-        Intent intent = new Intent(this, ObservarUbicacion.class);
-        startActivity(intent);
-    }
-
     public void administrar_paradas(View view){
         //Se inicializa el siguiente
         Intent intent = new Intent(this, AdministrarParadas.class);
         startActivity(intent);
     }
 
-    public void historial_Entragas(View view){
-        //Se inicializa el siguiente
-        Intent intent = new Intent(this, HistorialEntregas.class);
-        startActivity(intent);
-    }
 
     //Metodo para cerrar sesion
     public void cerrarSesion(View view){

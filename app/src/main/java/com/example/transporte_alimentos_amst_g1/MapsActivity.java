@@ -67,15 +67,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        databaseReference.child("UsersRegis").child("Usuarios").child(Usuario_persona).child("Paradas").child("Parada1").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("UsersRegis").child("Usuarios").child(Usuario_persona).child("Paradas").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                double latit = (double) snapshot.child("Latitud").getValue();
-                double longi = (double) snapshot.child("Longitud").getValue();
-                // Add a marker in Sydney and move the camera
-                LatLng sydney = new LatLng(latit, longi);
-                mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+                for (DataSnapshot objSnapchot : snapshot.getChildren()) {
+                    double latit = (double) objSnapchot.child("Latitud").getValue();
+                    double longi = (double) objSnapchot.child("Longitud").getValue();
+                    String nombre = objSnapchot.child("Conductor").getValue(String.class);
+                    // Add a marker in Sydney and move the camera
+                    LatLng sydney = new LatLng(latit, longi);
+                    mMap.addMarker(new MarkerOptions().position(sydney).title("Parada de "+nombre));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+                }
             }
 
             @Override

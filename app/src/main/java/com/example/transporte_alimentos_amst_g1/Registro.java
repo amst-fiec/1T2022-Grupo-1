@@ -40,7 +40,9 @@ public class Registro extends AppCompatActivity {
         ArrayList<String> categorias = new ArrayList<String>();
         categorias.add("Administrador");
         categorias.add("Conductor");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, categorias);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                R.layout.custum_spinner,
+                categorias);
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -67,7 +69,6 @@ public class Registro extends AppCompatActivity {
         databaseReference.child("UsersRegis").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                System.out.println("OSSS");
                 usuario userIngresado = new usuario();
                 userIngresado.setUsuario(datoUser);
                 userIngresado.setNombre(datoNombre);
@@ -156,7 +157,6 @@ public class Registro extends AppCompatActivity {
 
     public void registrar(View v){
         if (ingresoValidaciones()) {
-            System.out.println("OSSS");
             validarUsuarioIngreso();
         }
     }

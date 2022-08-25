@@ -232,6 +232,8 @@
                     android:layout_width="200dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
+                    android:background="@drawable/edit_round"
+                    android:fontFamily="@font/alice"
                     android:contentDescription="@string/app_name"
                     android:entries="@array/list"
                     android:paddingRight="10dp"

@@ -65,7 +65,7 @@
         android:background="@drawable/boton_redondo"
         android:fontFamily="@font/alice"
         android:onClick="historial_Entragas"
-        android:text="Historial de entregas"
+        android:text="Observar Paradas"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold" />

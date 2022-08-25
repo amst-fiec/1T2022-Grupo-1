@@ -42,7 +42,7 @@
                 <ListView
                     android:id="@+id/listParadas"
                     android:layout_width="300dp"
-                    android:layout_height="200dp"
+                    android:layout_height="263dp"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="40dp"
@@ -84,21 +84,6 @@
                         app:fabCustomSize="80dp"
                         app:maxImageSize="50dp"
                         app:srcCompat="@drawable/ic_save" />
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton3"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="24dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:contentDescription="@string/app_name"
-                        android:onClick="editar"
-                        app:backgroundTint="#705587"
-                        app:fabCustomSize="80dp"
-                        app:maxImageSize="50dp"
-                        app:srcCompat="@drawable/ic_edit" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/floatingActionButton4"

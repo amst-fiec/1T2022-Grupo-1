@@ -76,6 +76,7 @@ public class RegistroAdministrador extends AppCompatActivity {
                     if (snapshot.hasChild(datoUser) ) {
                         databaseReference.child("UsersRegis").child("Usuarios").child(datoUser).child("Conductores").child(usuario_persona).child("nombre").setValue(nombre_persona);
                         databaseReference.child("UsersRegis").child("Usuarios").child(datoUser).child("Conductores").child(usuario_persona).child("placa").setValue(datoPlaca);
+                        databaseReference.child("UsersRegis").child("Usuarios").child(datoUser).child("Conductores").child(usuario_persona).child("paradas").setValue(0);
                         databaseReference.child("UsersRegis").child("Usuarios").child(usuario_persona).child("Administrador").setValue(datoUser);
 
                     }else{

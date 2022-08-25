@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.266" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable-anydpi/ic_locat.xml" value="0.1235" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable-anydpi/ic_save.xml" value="0.3025" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable-mdpi/back.xml" value="0.3025" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/drawable-v24/edit_aviso.xml" value="0.3025" />
@@ -36,6 +37,9 @@
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/activity_registro_administrador.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/custom_spinner.xml" value="0.36041666666666666" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.36041666666666666" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/custum_spinner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/row.xml" value="0.253125" />
+        <entry key="..\:/Users/alexm/AndroidStudioProjects/1T2022-Transporte-de-alimentos/app/src/main/res/layout/row1.xml" value="0.253125" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/Transporte_Alimentos_AMST_G1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/Transporte_Alimentos_AMST_G1/app/src/main/res/drawable/boton_redondo.xml" value="0.195" />
         <entry key="..\:/Users/alexm/AndroidStudioProjects/Transporte_Alimentos_AMST_G1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
