@@ -2,9 +2,9 @@ package com.example.transporte_alimentos_amst_g1.clases;
 
 public class usuario {
     private String nombre;
+    private String usuario;
     private String apellidos;
     private String correo;
-    private String usuario;
     private String clave;
     private String clase;
 
@@ -50,5 +50,14 @@ public class usuario {
 
     public void setClase(String clase) {
         this.clase = clase;
+    }
+
+    @SuppressWarnings("unused")
+    public String getApellidos() {
+        return apellidos;
+    }
+    @SuppressWarnings("unused")
+    public String getCorreo() {
+        return correo;
     }
 }
