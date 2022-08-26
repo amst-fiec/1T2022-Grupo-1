@@ -6,21 +6,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,11 +37,11 @@ public class AdministrarParadas extends AppCompatActivity {
     String usuarioActual;
     String paradaSel;
 
-    private List<String> listaTit= new ArrayList<>();
-    private  List<String> listaNom= new ArrayList<>();
-    private List<Integer> listaImg = new ArrayList<>();
-    private List<String> listaLong= new ArrayList<>();
-    private  List<String> listaLat= new ArrayList<>();
+    private final List<String> listaTit= new ArrayList<>();
+    private final List<String> listaNom= new ArrayList<>();
+    private final List<Integer> listaImg = new ArrayList<>();
+    private final List<String> listaLong= new ArrayList<>();
+    private final List<String> listaLat= new ArrayList<>();
     String[] arrayTit;
     String[] arrayNom;
     Integer[] arrayimg;
@@ -65,12 +63,9 @@ public class AdministrarParadas extends AppCompatActivity {
 
         paradaSel="";
         //se obtiene el valor del elemento seleccionado en el listview
-        listaStops.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                paradaSel= (String) adapterView.getItemAtPosition(i);
-                System.out.println(paradaSel);
-            }
+        listaStops.setOnItemClickListener((adapterView, view, i, l) -> {
+            paradaSel= (String) adapterView.getItemAtPosition(i);
+            System.out.println(paradaSel);
         });
 
     }
@@ -82,12 +77,12 @@ public class AdministrarParadas extends AppCompatActivity {
     }
 
     public class MyAdapter extends ArrayAdapter<String> {
-        Context context;
-        String[] titulo;
-        String[] nombre;
-        String[] latitud;
-        String[] longitud;
-        Integer[] imagenes;
+        final Context context;
+        final String[] titulo;
+        final String[] nombre;
+        final String[] latitud;
+        final String[] longitud;
+        final Integer[] imagenes;
 
         MyAdapter(Context c, String[] titulo, String[] nombre, Integer[] imagenes, String[] latitud, String[] longitud){
             super(c, R.layout.row,R.id.interTitulo,titulo);
@@ -171,7 +166,7 @@ public class AdministrarParadas extends AppCompatActivity {
         });
     }
 
-    public void regresar(View view){
+    public void regresar(View v){
         //Se regresa a la pestaña anterior
         finish();
     }
@@ -184,23 +179,18 @@ public class AdministrarParadas extends AppCompatActivity {
 
     }
 
+    //Metodo Para Borrar Parada
     public void borrar(View view){
         if (!paradaSel.equals("")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.app_name);
             builder.setIcon(R.drawable.edit_aviso);
             builder.setMessage("¿Quiére borrar la Parada "+ paradaSel+"?");
-            builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    databaseReference.child("UsersRegis").child("Usuarios").child(usuarioActual).child("Paradas").child(paradaSel).removeValue();
-                    paradaSel="";
-                }
+            builder.setPositiveButton("Si", (dialog, id) -> {
+                databaseReference.child("UsersRegis").child("Usuarios").child(usuarioActual).child("Paradas").child(paradaSel).removeValue();
+                paradaSel="";
             });
-            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setNegativeButton("No", (dialog, id) -> dialog.dismiss());
             AlertDialog alert = builder.create();
             alert.show();
 

@@ -4,16 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,10 +35,10 @@ public class Registro extends AppCompatActivity {
 
 
         spinner = findViewById(R.id.spinnerTipo);
-        ArrayList<String> categorias = new ArrayList<String>();
+        ArrayList<String> categorias = new ArrayList<>();
         categorias.add("Administrador");
         categorias.add("Conductor");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
                 R.layout.custum_spinner,
                 categorias);
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
@@ -141,16 +139,8 @@ public class Registro extends AppCompatActivity {
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.drawable.edit_aviso);
         builder.setMessage("Seguro quiere regresar?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
+        builder.setPositiveButton("Yes", (dialog, id) -> finish());
+        builder.setNegativeButton("No", (dialog, id) -> dialog.dismiss());
         AlertDialog alert = builder.create();
         alert.show();
     }

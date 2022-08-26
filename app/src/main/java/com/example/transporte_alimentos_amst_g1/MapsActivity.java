@@ -5,8 +5,8 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,7 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityMapsBinding binding;
 
     String Usuario_persona;
 
@@ -35,7 +34,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
+        com.example.transporte_alimentos_amst_g1.databinding.ActivityMapsBinding binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         usuario user = ClaseUsando.usuarioUsando;
@@ -65,7 +64,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
         databaseReference.child("UsersRegis").child("Usuarios").child(Usuario_persona).child("Paradas").addValueEventListener(new ValueEventListener() {
             @Override

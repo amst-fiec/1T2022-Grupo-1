@@ -5,21 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class RegistroAdministrador extends AppCompatActivity {
     EditText userAdmin, placa;

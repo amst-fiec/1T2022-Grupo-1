@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,10 +33,10 @@ public class MostrarParadas extends AppCompatActivity {
     DatabaseReference databaseReference;
     String usuarioActual;
 
-    private List<String> listaTit= new ArrayList<>();
-    private List<Integer> listaImg = new ArrayList<>();
-    private List<String> listaLong= new ArrayList<>();
-    private  List<String> listaLat= new ArrayList<>();
+    private final List<String> listaTit= new ArrayList<>();
+    private final List<Integer> listaImg = new ArrayList<>();
+    private final List<String> listaLong= new ArrayList<>();
+    private final List<String> listaLat= new ArrayList<>();
     String[] arrayTit;
     Integer[] arrayimg;
     String[] arrayLat;
@@ -64,11 +64,11 @@ public class MostrarParadas extends AppCompatActivity {
 
 
     public class MyAdapter extends ArrayAdapter<String> {
-        Context context;
-        String[] titulo;
-        String[] latitud;
-        String[] longitud;
-        Integer[] imagenes;
+        final Context context;
+        final String[] titulo;
+        final String[] latitud;
+        final String[] longitud;
+        final Integer[] imagenes;
 
         MyAdapter(Context c, String[] titulo, Integer[] imagenes, String[] latitud, String[] longitud){
             super(c, R.layout.row,R.id.interTitulo,titulo);

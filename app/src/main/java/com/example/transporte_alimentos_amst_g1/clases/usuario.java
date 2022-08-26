@@ -1,4 +1,4 @@
-package com.example.transporte_alimentos_amst_g1.Clases;
+package com.example.transporte_alimentos_amst_g1.clases;
 
 public class usuario {
     private String nombre;
@@ -20,16 +20,8 @@ public class usuario {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
-    }
-
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }
-
-    public String getCorreo() {
-        return correo;
     }
 
     public void setCorreo(String correo) {

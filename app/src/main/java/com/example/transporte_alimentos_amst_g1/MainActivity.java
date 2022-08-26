@@ -13,13 +13,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-                Intent mainIntent = new Intent(MainActivity.this, IngresoSesion.class);
-                startActivity(mainIntent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent mainIntent = new Intent(MainActivity.this, IngresoSesion.class);
+            startActivity(mainIntent);
+            finish();
         }, 3000);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.transporte_alimentos_amst_g1.Services;
+package com.example.transporte_alimentos_amst_g1.services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -18,12 +19,12 @@ import java.util.Random;
 public class MyFirebaseInstanceService extends FirebaseMessagingService {
     //Ctrl + O
     @Override
-    public void onNewToken(String s) {
+    public void onNewToken(@NonNull String s) {
         super.onNewToken(s);
         Log.d("TOKENFIREBASE", s);
     }
     @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
+    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         showNotification(remoteMessage.getNotification().getTitle(),
                 remoteMessage.getNotification().getBody());

@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -58,13 +58,13 @@ public class OpcionVisualizacion extends AppCompatActivity {
                     double latitud = (double) objSnapchot.child("Latitud").getValue();
                     double longitud = (double) objSnapchot.child("Longitud").getValue();
 
-                    String union = "Latitud:  "+Double.toString(latitud)+"Longitud:  "+Double.toString(longitud);
+                    String union = "Latitud:  "+ latitud +"Longitud:  "+ longitud;
 
 
                     arrayList.add(union);
                 }
                 System.out.println(arrayList);
-                ArrayAdapter adapter = new ArrayAdapter(OpcionVisualizacion.this, android.R.layout.simple_list_item_1,arrayList);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(OpcionVisualizacion.this, android.R.layout.simple_list_item_1, arrayList);
                 listaParadas.setAdapter(adapter);
 
             }

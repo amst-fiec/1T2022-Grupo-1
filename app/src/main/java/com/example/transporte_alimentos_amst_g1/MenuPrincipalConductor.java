@@ -4,15 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,10 +42,8 @@ public class MenuPrincipalConductor extends AppCompatActivity {
         nombre_persona = user.getNombre();
         status_persona= user.getClase();
         Usuario_persona = user.getUsuario();
-        //datoLong= log.getText().toString().trim();
-        //datoLat= lat.getText().toString().trim();
-        txt_titulo.setText("Bienvenido "+nombre_persona+"\n"
-                +"Clase: "+status_persona);
+        String txt = "Bienvenido "+nombre_persona+"\n" +"Clase: "+status_persona;
+        txt_titulo.setText(txt);
 
         inicializarFirebase();
         databaseReference.child("UsersRegis").child("Usuarios").child(Usuario_persona).child("localizacion").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -104,16 +101,8 @@ public class MenuPrincipalConductor extends AppCompatActivity {
         builder.setTitle("Log Out");
         builder.setIcon(R.drawable.edit_aviso);
         builder.setMessage("Seguro quiere salir?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
+        builder.setPositiveButton("Yes", (dialog, id) -> finish());
+        builder.setNegativeButton("No", (dialog, id) -> dialog.dismiss());
         AlertDialog alert = builder.create();
         alert.show();
     }

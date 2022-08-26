@@ -1,7 +1,5 @@
 package com.example.transporte_alimentos_amst_g1;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -15,8 +13,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -76,23 +74,20 @@ public class IngresoSesion extends AppCompatActivity {
         }
     }
 
-    ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+    final ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent intent = result.getData();
-                        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(intent);
-                        try {
-                            GoogleSignInAccount account = task.getResult(ApiException.class);
-                            if (account != null) firebaseAuthWithGoogle(account);
-                        } catch (ApiException e) {
-                            Log.w("TAG", "Fallo el inicio de sesión con google.", e);
-                        }
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+                    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(intent);
+                    try {
+                        GoogleSignInAccount account = task.getResult(ApiException.class);
+                        if (account != null) firebaseAuthWithGoogle(account);
+                    } catch (ApiException e) {
+                        Log.w("TAG", "Fallo el inicio de sesión con google.", e);
                     }
-
                 }
+
             });
 
     //Metodo de autenticación para google.
@@ -113,7 +108,7 @@ public class IngresoSesion extends AppCompatActivity {
     //metodo para definir los parametros que se pasaran al siguiente intent e inicializarlo.
     private void ingresoUsuario(FirebaseUser user) {
         if (user != null) {
-            HashMap<String, String> info_user = new HashMap<String, String>();
+            HashMap<String, String> info_user = new HashMap<>();
             //Se coloca la informacion mas importante dentro dle hashmap para pasarlos al siguiente intent
             info_user.put("user_name", user.getDisplayName());
             info_user.put("user_email", user.getEmail());

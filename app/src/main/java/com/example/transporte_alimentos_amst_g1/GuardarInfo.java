@@ -10,8 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.example.transporte_alimentos_amst_g1.Clases.ClaseUsando;
-import com.example.transporte_alimentos_amst_g1.Clases.usuario;
+import com.example.transporte_alimentos_amst_g1.clases.ClaseUsando;
+import com.example.transporte_alimentos_amst_g1.clases.usuario;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -53,12 +53,12 @@ public class GuardarInfo extends AppCompatActivity {
         databaseReference.child("UsersRegis").child("Usuarios").child(usuarioActual).child("Conductores").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<String> categorias = new ArrayList<String>();
+                ArrayList<String> categorias = new ArrayList<>();
                 for (DataSnapshot objSnapchot : snapshot.getChildren()){
                     String usuario= objSnapchot.getKey();
                     categorias.add(usuario);
                 }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
                         R.layout.custum_spinner,
                         categorias);
                 adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
@@ -78,6 +78,7 @@ public class GuardarInfo extends AppCompatActivity {
         databaseReference=firebaseDatabase.getReference();
     }
 
+    //Metodo Para Guardar Informacion
     public void guardado1(View view){
         latit= eLatitud.getText().toString().toLowerCase().trim();
         double dlat = Double.parseDouble(latit);
@@ -91,7 +92,7 @@ public class GuardarInfo extends AppCompatActivity {
                 System.out.println(snapshot);
                 String nombre = snapshot.child("Conductores").child(infoSel).child("nombre").getValue(String.class);
                 long numParadas = (long) snapshot.child("Conductores").child(infoSel).child("paradas").getValue();
-                String titulo = infoSel + Long.toString(numParadas);
+                String titulo = infoSel + numParadas;
 
                 Map<String,Object> taskMap = new HashMap<>();
                 taskMap.put("Conductor", nombre);

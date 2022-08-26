@@ -25,7 +25,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
         //Se obtienen los datos del intent pasado
         Intent intent = getIntent();
-        HashMap<String, String> informacion_usuario = (HashMap<String, String>)intent.getSerializableExtra("info_user");
+        @SuppressWarnings("unchecked")
+        HashMap<String, String> informacion_usuario = (HashMap<String, String>) intent.getSerializableExtra("info_user");
 
         //Se busca los componentes en el layout
         txt_titulo = findViewById(R.id.titulo_bienvenida);
